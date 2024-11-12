@@ -1,17 +1,29 @@
-import js from '@eslint/js'
-import prettierRecommended from 'eslint-plugin-prettier/recommended'
+import js from "@eslint/js";
+import globals from 'globals';
 
 export default [
   js.configs.recommended,
-  prettierRecommended,
+
   {
-    files: ['src/**/*.js'],
-    ignores: ['**/*.test.js', '.config/*'],
-    rules: {
-      semi: 'warn',
-      'prefer-const': 'warn',
-      'no-unused-vars': 'warn',
-      'no-undef': 'warn',
+    files: ["src/**/*.js"],
+    ignores: ["**/*.test.js", ".config/*"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      }
     },
-  },
-]
+    rules: {
+      semi: "warn",
+      "prefer-const": "warn",
+      "no-unused-vars": "warn",
+        "no-undef": "error",
+      "eqeqeq": "error",
+      "no-var": "error",
+      "no-console": "warn",
+      "no-duplicate-imports": "error",
+      "no-template-curly-in-string": "error",
+      "camelcase": "warn",
+      "max-len": ["warn", { "code": 100 }]
+    }
+  }
+];
