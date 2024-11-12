@@ -1,0 +1,16 @@
+{
+  "name": "eslint-project",
+  "version": "1.0.0",
+  "description": "This is the README ;)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.14.0"
+  }
+}
